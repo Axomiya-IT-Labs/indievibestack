@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: "IndieVibeStack - Build AI Products Without Code",
     template: "%s | IndieVibeStack"
   },
-  description: "Discover 500+ curated AI tools, project stacks, prompts, and guides. Build real AI products without coding. Join 10,000+ indie hackers.",
+  description: "Discover curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
   
   // Keywords for SEO
   keywords: [
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   // Open Graph (Facebook, LinkedIn)
   openGraph: {
     title: "IndieVibeStack - Build AI Products Without Code",
-    description: "Discover 500+ curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
+    description: "Discover curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
     url: "https://indievibestack.vercel.app",
     siteName: "IndieVibeStack",
     images: [
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IndieVibeStack - Build AI Products Without Code",
-    description: "Discover 500+ curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
+    description: "Discover curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
     images: ["/images/og/twitter-image.png"],
-    creator: "@rakibulio",
+        creator: "@rkblailabs",
     site: "@indievibestack",
   },
   
@@ -88,9 +88,13 @@ export const metadata: Metadata = {
   },
   
   // Additional SEO tags (authors moved here - outside openGraph)
-  authors: [{ name: "Rakibul", url: "https://x.com/rakibulio" }],
-  creator: "Rakibul",
+  authors: [
+    { name: "Axomiya IT Labs", url: "https://axomiyaitlabs.vercel.app/" },
+        { name: "Rakibul", url: "https://x.com/rkblailabs" },
+  ],
+  creator: "Axomiya IT Labs",
   publisher: "IndieVibeStack",
+  applicationName: "IndieVibeStack",
   category: "technology",
   
   // Manifest for PWA

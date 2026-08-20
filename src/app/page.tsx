@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, Sparkles, ArrowRight, Zap, Rocket, Star, Users, Send } from "lucide-react";
+import { Search, Sparkles, ArrowRight, Zap, Rocket, Star } from "lucide-react";
 import { useState } from "react";
 import GlobalSearch from "@/components/search/GlobalSearch";
 
 export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const router = useRouter();
 
   const handleExploreTools = () => {
@@ -34,7 +35,7 @@ export default function Home() {
     "@type": "WebSite",
     "name": "IndieVibeStack",
     "url": "https://indievibestack.vercel.app",
-    "description": "Discover 500+ curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
+    "description": "Discover curated AI tools, project stacks, prompts, and guides. Build real AI products without coding.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -59,9 +60,10 @@ export default function Home() {
     "name": "IndieVibeStack",
     "url": "https://indievibestack.vercel.app",
     "logo": "https://indievibestack.vercel.app/images/logo.svg",
-    "sameAs": [
-      "https://twitter.com/indievibestack",
-      "https://github.com/rakibulio",
+        "sameAs": [
+      "https://x.com/indievibestack",
+      "https://github.com/Axomiya-IT-Labs/indievibestack",
+      "https://axomiyaitlabs.vercel.app/",
       "https://t.me/indievibestack",
       "https://youtube.com/@indievibestack"
     ],
@@ -70,6 +72,77 @@ export default function Home() {
       "contactType": "customer support",
       "url": "https://t.me/indievibestack"
     }
+  };
+
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is IndieVibeStack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "IndieVibeStack is a free, open-source platform that helps indie hackers and builders create real AI products without writing code. It provides curated AI tools, step-by-step project stacks, ready-to-use prompts, and in-depth guides."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is IndieVibeStack for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It's for indie hackers, solopreneurs, makers, and anyone who wants to build AI-powered products but doesn't have coding experience. Whether you're building a SaaS, automation workflow, or AI agent, IndieVibeStack gives you the stack and prompts to ship fast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need coding experience to use IndieVibeStack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The project stacks are designed for no-code and low-code builders. You can use tools like Bubble, Make.com, Zapier, and AI platforms without writing custom code. The prompts also work inside any LLM, no programming required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is IndieVibeStack free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. IndieVibeStack is open source and free forever. The prompts, guides, and stack recommendations are available to everyone. Some linked tools may have their own pricing, but the platform itself is free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are AI Prompts and how do I use them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Prompt Library contains ready-to-use prompts organized by category: Writing, Marketing, Development, Design, Business, and Productivity. Each prompt has editable placeholders. You can copy the prompt or click ChatGPT, Claude, Gemini, or Grok to open it directly in that model."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Project Stacks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Project Stacks are step-by-step tutorials that show you how to build complete AI products from scratch. Each stack includes the exact tools, APIs, and workflow you need — like building a RAG chatbot, AI automation pipeline, or SaaS boilerplate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I contribute prompts or suggest a new category?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The prompt library is community-driven. Open an issue or PR on GitHub with your prompt. Follow the format in CONTRIBUTING.md: add your prompt object to src/data/prompts.ts with a unique id, slug, title, promptText, category, and subcategory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is IndieVibeStack different from other AI directories?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike generic AI tool lists, IndieVibeStack focuses on complete project stacks and production-ready prompts. It's built by indie hackers for indie hackers, with an emphasis on shipping real products — not just collecting tools."
+        }
+      }
+    ]
   };
 
   return (
@@ -82,6 +155,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
       />
       
       <div className="min-h-screen">
@@ -115,7 +192,7 @@ export default function Home() {
                   <div className="relative flex items-center bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all border-2 border-gray-200 hover:border-purple-300 cursor-pointer">
                     <Search className="absolute left-5 w-5 h-5 text-gray-400 group-hover:text-purple-500 transition" />
                     <div className="w-full px-14 py-4 text-left text-gray-500 group-hover:text-gray-700 transition">
-                      Search 500+ tools, stacks, prompts...
+                      Search tools, stacks, prompts...
                     </div>
                     <kbd className="absolute right-5 hidden sm:inline-flex px-2 py-1 text-xs bg-gray-100 rounded border text-gray-500">
                       ⌘K
@@ -125,7 +202,7 @@ export default function Home() {
                 
                 <div className="flex flex-wrap justify-center gap-2 mt-4">
                   <span className="text-xs text-gray-400">Popular:</span>
-                  {["Bubble", "Make.com", "Zapier", "LangFlow", "RAG"].map((term) => (
+                  {[ "ChatGPT", "Gemini", "Claude", "Grok", "Bubble", "Make.com", "Zapier", "RAG" ].map((term) => (
                     <button
                       key={term}
                       onClick={() => setSearchOpen(true)}
@@ -163,30 +240,17 @@ export default function Home() {
               {/* Stats */}
               <div className="flex justify-center gap-8 mt-16">
                 <Link href="/tools" className="text-center hover:opacity-80 transition group">
-                  <div className="text-2xl font-bold gradient-text">500+</div>
-                  <div className="text-sm text-gray-500">Tools & Resources</div>
+                  <div className="text-2xl font-bold gradient-text">Curated</div>
+                  <div className="text-sm text-gray-500">AI Tools</div>
                 </Link>
-                
-                <a 
-                  href="https://t.me/indievibestack" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-center hover:opacity-80 transition group cursor-pointer"
-                >
-                  <div className="flex items-center justify-center gap-1 text-2xl font-bold gradient-text">
-                    <Users className="w-5 h-5" />
-                    <span>Active</span>
-                  </div>
-                  <div className="text-sm text-gray-500 flex items-center justify-center gap-1">
-                    Community
-                    <Send className="w-3 h-3" />
-                  </div>
-                </a>
-                
-                <Link href="/stacks" className="text-center hover:opacity-80 transition">
-                  <div className="text-2xl font-bold gradient-text">50+</div>
+                <Link href="/stacks" className="text-center hover:opacity-80 transition group">
+                  <div className="text-2xl font-bold gradient-text">Step-by-Step</div>
                   <div className="text-sm text-gray-500">Project Stacks</div>
                 </Link>
+                <span className="text-center group">
+                  <div className="text-2xl font-bold gradient-text">Open Source</div>
+                  <div className="text-sm text-gray-500">Free Forever</div>
+                </span>
               </div>
             </div>
           </section>
@@ -209,7 +273,7 @@ export default function Home() {
                     <Zap className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">AI Tools Directory</h3>
-                  <p className="text-gray-600">Discover 500+ curated AI tools for every use case</p>
+                  <p className="text-gray-600">Discover curated AI tools for every use case</p>
                 </Link>
                 
                 <Link href="/stacks" className="p-6 rounded-2xl border hover:shadow-xl transition card-hover block">
@@ -225,8 +289,77 @@ export default function Home() {
                     <Star className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">AI Prompts</h3>
-                  <p className="text-gray-600">1000+ prompts to supercharge your AI workflow</p>
+                  <p className="text-gray-600">Ready-to-use prompts to supercharge your AI workflow</p>
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="py-20 bg-white">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-gray-500 max-w-2xl mx-auto">
+                  Everything you need to know about IndieVibeStack. Can't find an answer? Reach out on Telegram.
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                {[
+                  {
+                    q: "What is IndieVibeStack?",
+                    a: "IndieVibeStack is a free, open-source platform that helps indie hackers and builders create real AI products without writing code. It provides curated AI tools, step-by-step project stacks, ready-to-use prompts, and in-depth guides."
+                  },
+                  {
+                    q: "Who is it for?",
+                    a: "It's for indie hackers, solopreneurs, makers, and anyone who wants to build AI-powered products but doesn't have coding experience. Whether you're building a SaaS, automation workflow, or AI agent, IndieVibeStack gives you the stack and prompts to ship fast."
+                  },
+                  {
+                    q: "Do I need coding experience?",
+                    a: "No. The project stacks are designed for no-code and low-code builders. You can use tools like Bubble, Make.com, Zapier, and AI platforms without writing custom code. The prompts also work inside any LLM, no programming required."
+                  },
+                  {
+                    q: "Is it free?",
+                    a: "Yes. IndieVibeStack is open source and free forever. The prompts, guides, and stack recommendations are available to everyone. Some linked tools may have their own pricing, but the platform itself is free."
+                  },
+                  {
+                    q: "What are AI Prompts and how do I use them?",
+                    a: "The Prompt Library contains ready-to-use prompts organized by category: Writing, Marketing, Development, Design, Business, and Productivity. Each prompt has editable placeholders. You can copy the prompt or click ChatGPT, Claude, Gemini, or Grok to open it directly in that model."
+                  },
+                  {
+                    q: "What are Project Stacks?",
+                    a: "Project Stacks are step-by-step tutorials that show you how to build complete AI products from scratch. Each stack includes the exact tools, APIs, and workflow you need — like building a RAG chatbot, AI automation pipeline, or SaaS boilerplate."
+                  },
+                  {
+                    q: "Can I contribute prompts?",
+                    a: "Yes. The prompt library is community-driven. Open an issue or PR on GitHub with your prompt. Follow the format in CONTRIBUTING.md: add your prompt object to src/data/prompts.ts with a unique id, slug, title, promptText, category, and subcategory."
+                  },
+                  {
+                    q: "How is this different from other AI directories?",
+                    a: "Unlike generic AI tool lists, IndieVibeStack focuses on complete project stacks and production-ready prompts. It's built by indie hackers for indie hackers, with an emphasis on shipping real products — not just collecting tools."
+                  }
+                ].map((item, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div key={idx} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-gray-300 hover:shadow-sm transition-all">
+                      <button
+                        onClick={() => setOpenFaq(isOpen ? null : idx)}
+                        className="w-full flex items-center justify-between p-5 text-left"
+                      >
+                        <h3 className="text-base font-semibold text-gray-900 pr-4">{item.q}</h3>
+                        <span className="text-xl text-gray-400 leading-none select-none">{isOpen ? "−" : "+"}</span>
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-5">
+                          <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>

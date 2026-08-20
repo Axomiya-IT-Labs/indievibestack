@@ -1,48 +1,38 @@
-<svg width="512" height="512" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">IndieVibeStack Icon</title>
+  <desc id="desc">Layered pink, purple and cyan diamond icon with a white four-point sparkle.</desc>
   <defs>
-    <linearGradient id="indieGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6"/>
-      <stop offset="50%" stop-color="#EC4899"/>
-      <stop offset="100%" stop-color="#06B6D4"/>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF4FA3"/>
+      <stop offset="1" stop-color="#C026D3"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#06B6D4"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="100" height="100" rx="24" fill="#0F172A"/>
+  <!-- Bottom cyan layer -->
+  <rect x="58" y="120" width="140" height="92" rx="30"
+        transform="rotate(45 128 166)" fill="url(#cyan)"/>
 
-  <!-- Main Spark / Stack Icon -->
-  <g transform="translate(50 50)">
-    
-    <!-- Outer Glow Shape -->
-    <path
-      d="M0 -34
-         L10 -10
-         L34 0
-         L10 10
-         L0 34
-         L-10 10
-         L-34 0
-         L-10 -10
-         Z"
-      fill="url(#indieGradient)"
-    />
+  <!-- Middle purple layer -->
+  <rect x="58" y="91" width="140" height="92" rx="30"
+        transform="rotate(45 128 137)" fill="url(#purple)"/>
 
-    <!-- Inner Layer -->
-    <path
-      d="M0 -18
-         L6 -6
-         L18 0
-         L6 6
-         L0 18
-         L-6 6
-         L-18 0
-         L-6 -6
-         Z"
-      fill="white"
-      opacity="0.95"
-    />
+  <!-- Top pink layer -->
+  <rect x="54" y="50" width="148" height="148" rx="38"
+        transform="rotate(45 128 124)" fill="url(#pink)"/>
 
-    <!-- Center Core -->
-    <circle cx="0" cy="0" r="4" fill="#0F172A"/>
-  </g>
+  <!-- Sparkle -->
+  <path d="M128 70
+           C139 101 151 113 182 124
+           C151 135 139 147 128 178
+           C117 147 105 135 74 124
+           C105 113 117 101 128 70Z"
+        fill="#FFFFFF"/>
 </svg>

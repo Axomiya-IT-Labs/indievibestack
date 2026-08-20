@@ -288,7 +288,7 @@ Create AI-powered client portals
 ### 3. Make.com / Zapier
 Automate workflows with AI
 - Visual workflow builder
-- Connect 1000+ apps
+- Connect many apps
 - Add AI to any step
 - Best for: Automations, integrations
 

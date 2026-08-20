@@ -285,7 +285,7 @@ export default function GlobalSearch({ isOpen, onClose }: GlobalSearchProps) {
                 <div className="mt-6">
                   <h3 className="text-sm font-medium text-gray-500 mb-3">Popular Searches</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["RAG", "LangChain", "Prompt Engineering", "Bubble", "Zapier", "OpenAI", "ChatGPT"].map((term) => (
+                    {[ "ChatGPT", "Gemini", "Claude", "Grok", "RAG", "LangChain", "Bubble", "Zapier" ].map((term) => (
                       <button key={term} onClick={() => handleSearch(term)} className="px-3 py-1.5 bg-purple-50 hover:bg-purple-100 rounded-full text-sm text-purple-700 transition">
                         {term}
                       </button>
@@ -340,11 +340,6 @@ export default function GlobalSearch({ isOpen, onClose }: GlobalSearchProps) {
                             {result.category && (
                               <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
                                 {result.category}
-                              </span>
-                            )}
-                            {result.popularity && result.popularity > 90 && (
-                              <span className="text-xs px-2 py-0.5 rounded-full bg-green-100 text-green-700">
-                                🔥 {result.popularity}%
                               </span>
                             )}
                           </div>

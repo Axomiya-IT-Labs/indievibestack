@@ -161,13 +161,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       <a href="https://t.me/indievibestack" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
                         <Send className="w-4 h-4 text-gray-600 group-hover:text-white transition" />
                       </a>
-                      <a href="https://github.com/rakibulio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
+                      <a href="https://github.com/Axomiya-IT-Labs/indievibestack" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
                         <Github className="w-4 h-4 text-gray-600 group-hover:text-white transition" />
                       </a>
                       <a href="https://youtube.com/@indievibestack" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
                         <Youtube className="w-4 h-4 text-gray-600 group-hover:text-white transition" />
                       </a>
-                      <a href="https://twitter.com/rakibulio" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
+                                            <a href="https://x.com/rkblailabs" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 flex items-center justify-center transition-all group">
                         <Twitter className="w-4 h-4 text-gray-600 group-hover:text-white transition" />
                       </a>
                     </div>
@@ -181,14 +181,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <p className="text-sm text-gray-500">© {currentYear} IndieVibeStack. All rights reserved.</p>
                 <p className="text-xs text-gray-400 mt-1">Build real AI products — even if you can't code</p>
                 <p className="text-xs text-gray-400 mt-2">
-                  Built with 🤖 AI assistance • 
-                  <a 
-                    href="https://github.com/rakibulio" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-blue-500 hover:text-blue-600 hover:underline transition ml-1"
+                  Built with 🤖 AI assistance by{" "}
+                  <a
+                    href="https://axomiyaitlabs.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 hover:underline transition"
                   >
-                    Rakibul
+                    Axomiya IT Labs
+                  </a>
+                  <span className="text-gray-400"> · </span>
+                  <a
+                    href="https://github.com/Axomiya-IT-Labs/indievibestack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 hover:underline transition"
+                  >
+                    GitHub
                   </a>
                 </p>
               </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ToolLogo from "@/components/ToolLogo";
-import { Clock, TrendingUp } from "lucide-react";
+import { Clock } from "lucide-react";
 import { getToolsByCategory, getCategories } from "@/data/tools";
 
 function getDifficultyColor(difficulty: string): string {
@@ -57,10 +57,6 @@ export default function ToolsPage() {
                         {/* Header with Logo */}
                         <div className="flex items-start justify-between mb-4">
                           <ToolLogo domain={tool.domain} title={tool.title} size={48} />
-                          <div className="flex items-center gap-1">
-                            <TrendingUp className="w-3 h-3 text-green-500" />
-                            <span className="text-sm font-semibold text-gray-700">{tool.popularity}%</span>
-                          </div>
                         </div>
                         
                         {/* Title */}

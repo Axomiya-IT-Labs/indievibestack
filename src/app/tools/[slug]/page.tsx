@@ -67,10 +67,6 @@ export default async function ToolDetailPage({ params }: Props) {
                     <span className={`text-xs px-3 py-1 rounded-full ${getPricingBadge(tool.pricing)}`}>
                       {tool.pricing}
                     </span>
-                    <div className="flex items-center gap-1">
-                      <TrendingUp className="w-3 h-3 text-green-500" />
-                      <span className="text-sm font-semibold text-gray-700">{tool.popularity}% popular</span>
-                    </div>
                   </div>
                   <h1 className="text-3xl md:text-4xl font-bold mb-3 gradient-text">{tool.title}</h1>
                   <p className="text-lg text-gray-600 leading-relaxed">{tool.description}</p>
@@ -98,11 +94,6 @@ export default async function ToolDetailPage({ params }: Props) {
                 <Clock className="w-5 h-5 text-purple-600 mx-auto mb-2" />
                 <p className="text-xs text-gray-500">Build Time</p>
                 <p className="font-semibold text-sm">{tool.timeToBuild}</p>
-              </div>
-              <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
-                <Users className="w-5 h-5 text-purple-600 mx-auto mb-2" />
-                <p className="text-xs text-gray-500">Active Users</p>
-                <p className="font-semibold text-sm">5,000+</p>
               </div>
               <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
                 <Zap className="w-5 h-5 text-purple-600 mx-auto mb-2" />
@@ -224,10 +215,6 @@ export default async function ToolDetailPage({ params }: Props) {
                 <div className="flex justify-between">
                   <span className="text-gray-500">Time to Build:</span>
                   <span className="font-medium">{tool.timeToBuild}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Popularity:</span>
-                  <span className="font-medium">{tool.popularity}%</span>
                 </div>
               </div>
             </div>

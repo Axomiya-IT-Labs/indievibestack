@@ -21,7 +21,7 @@ function getCategoryColor(category: string): string {
 
 // Your author information
 const AUTHOR_NAME = "Rakibul";
-const AUTHOR_TWITTER = "https://x.com/rakibulio";
+const AUTHOR_TWITTER = "https://x.com/rkblailabs";
 const AUTHOR_BIO = "Building AI products and sharing knowledge. Follow for more tutorials and insights.";
 
 interface Props {
@@ -57,7 +57,7 @@ export default function GuideDetailPage({ params }: Props) {
     const title = guide.title;
     
     if (platform === "twitter") {
-      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}&via=rakibuilds`, "_blank");
+      window.open(`https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}&via=rkblailabs`, "_blank");
     } else if (platform === "linkedin") {
       window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank");
     } else {

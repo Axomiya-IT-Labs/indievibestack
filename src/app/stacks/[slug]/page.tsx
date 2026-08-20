@@ -95,10 +95,6 @@ export default function StackDetailPage({ params }: Props) {
                     <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-600 flex items-center gap-1">
                       <Clock className="w-3 h-3" /> {stack.timeToBuild}
                     </span>
-                    <div className="flex items-center gap-1">
-                      <TrendingUp className="w-3 h-3 text-green-500" />
-                      <span className="text-xs font-semibold text-gray-700">{stack.popularity}% popular</span>
-                    </div>
                   </div>
                   <h1 className="text-3xl md:text-4xl font-bold mb-3 gradient-text">{stack.title}</h1>
                   <p className="text-gray-600 leading-relaxed">{stack.description}</p>
