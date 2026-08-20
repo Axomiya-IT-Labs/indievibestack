@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { Inter } from "next/font/google";
 import "./global.css";
 import Link from "next/link";
@@ -14,10 +15,44 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const [searchOpen, setSearchOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
 
+  useEffect(() => {
+    document.title = "IndieVibeStack - Build Real AI Products Without Code";
+  }, []);
+
   return (
     <html lang="en">
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="IndieVibeStack is a free, open-source platform for indie hackers to build real AI products without code. Discover curated AI tools, project stacks, prompts, and guides." />
+        <meta name="keywords" content="AI tools, no-code, indie hackers, SaaS, AI prompts, project stacks, automation, RAG, AI agents, bubble, make.com, zapier, ChatGPT, Claude, Gemini, Grok" />
+        <meta name="author" content="Rakibul" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="google-site-verification" content="A8wskx8nC830MPRqphjcUgeBznTKVkFUWtD_EwGqEo8" />
+        <link rel="canonical" href="https://indievibestack.vercel.app" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://indievibestack.vercel.app" />
+        <meta property="og:title" content="IndieVibeStack - Build Real AI Products Without Code" />
+        <meta property="og:description" content="Free open-source platform for indie hackers. Curated AI tools, project stacks, prompts, and guides to build SaaS products without coding." />
+        <meta property="og:image" content="https://indievibestack.vercel.app/images/og/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="IndieVibeStack" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://indievibestack.vercel.app" />
+        <meta name="twitter:title" content="IndieVibeStack - Build Real AI Products Without Code" />
+        <meta name="twitter:description" content="Free open-source platform for indie hackers. Curated AI tools, project stacks, prompts, and guides to build SaaS products without coding." />
+        <meta name="twitter:image" content="https://indievibestack.vercel.app/images/og/twitter-image.png" />
+        
+        {/* Theme and Icons */}
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
